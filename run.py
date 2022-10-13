@@ -383,6 +383,8 @@ The bartenders are efficient around here.
     # Check if player has a Blackjack
     if player_score == 21:
         print("{} HAS A BLACKJACK".format(player1.upper()))
+
+        # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
@@ -395,10 +397,13 @@ The bartenders are efficient around here.
     if player_score > 21:
         print("{} BUSTED!!! GAME OVER!!!".format(player1.upper()))
         print("-"*40)
+
+        # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
+
         elif anothergame == "yes":
             blackjack_game(deck)
 
@@ -426,3 +431,30 @@ The bartenders are efficient around here.
                 ace_card += 1
             else:
                 ace_card += 1
+
+        # print player and dealer cards
+        print("{}'S CARDS: ".format(player1.upper()))
+        print_cards(player_cards, False)
+        print("{}'S SCORE = ".format(player1.upper()), player_score)
+ 
+        print()
+ 
+        print("DEALER CARDS: ")
+        print_cards(dealer_cards, False)
+        print("DEALER SCORE = ", dealer_score)      
+ 
+        input()
+
+    # Dealer busts
+    if dealer_score > 21:        
+        print("DEALER BUSTED!!! YOU WIN!!!") 
+        print("-"*40)
+
+        # User input validation for another game question
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        if anothergame == "no":
+            print("Thanks for playing! Come back for free drinks anytime!")
+            quit()
+
+        elif anothergame == "yes":
+            blackjack_game(deck)
