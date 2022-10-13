@@ -249,3 +249,11 @@ The bartenders are efficient around here.
     # Scores for both dealer and player
     player_score = 0
     dealer_score = 0
+
+    # Initial hand for player and dealer
+    while len(player_cards) < 2:
+
+        # Randomly dealing a card
+        player_card = random.choice(deck)
+        player_cards.append(player_card)
+        deck.remove(player_card)
