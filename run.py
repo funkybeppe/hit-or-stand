@@ -364,6 +364,19 @@ The bartenders are efficient around here.
             print_cards(player_cards, False)
             print("{}'S SCORE = ".format(player1.upper()), player_score)
 
-    # If player decides to Stand
+        # If player decides to Stand
         if choice.upper() == 'S':
             break
+
+    # Print player and dealer cards
+    print("{}'S CARDS: ".format(player1.upper()))
+    print_cards(player_cards, False)
+    print("{}'S SCORE = ".format(player1.upper()), player_score)
+ 
+    print()
+    print("DEALER IS REVEALING THE CARDS....")
+ 
+    print("DEALER CARDS: ")
+    print_cards(dealer_cards, False)
+    print("DEALER SCORE = ", dealer_score)
+
