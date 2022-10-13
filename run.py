@@ -129,7 +129,8 @@ def print_cards(cards, hidden):
 
 # Function for a single game of blackjack
 def blackjack_game(deck):
-    
+
+    # Game title with light green color code
     print("""\033[92m
 .-..-. _  .-.                 .--.  .-.                .-.   .--.
 : :; ::_;.' `.               : .--'.' `.               : :  :_,. :
@@ -137,3 +138,13 @@ def blackjack_game(deck):
 : :: :: : : :   ' .; :: ..'   _`, : : :' .; ; : ,. :' .; :   :_;
 :_;:_;:_; :_;   `.__.':_;    `.__.' :_;`.__,_;:_;:_;`.__.'   :_;
     \033[0m""")
+
+# Loop to check user input and avoid blank selections. Numbers are allowed as user can utilise them for a nickname.
+    while True:
+        player1 = input("What is your name, superstar? ")
+
+        if player1 == '':
+            print("Username is empty, please select a name")
+
+        elif player1 != '':
+            break
