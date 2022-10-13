@@ -257,3 +257,6 @@ The bartenders are efficient around here.
         player_card = random.choice(deck)
         player_cards.append(player_card)
         deck.remove(player_card)
+
+        # Updating the player score
+        player_score += player_card.card_value
