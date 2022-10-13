@@ -413,3 +413,16 @@ The bartenders are efficient around here.
         dealer_card = random.choice(deck)
         dealer_cards.append(dealer_card)
         deck.remove(dealer_card)
+
+        # Updating the dealer's score
+        dealer_score += dealer_card.card_value
+ 
+        # Updating player score in case player's card have ace in them
+        ace_card = 0
+        while dealer_score > 21 and ace_card < len(dealer_cards):
+            if dealer_cards[ace_card].card_value == 11:
+                dealer_cards[ace_card].card_value = 1
+                dealer_score -= 10
+                ace_card += 1
+            else:
+                ace_card += 1
