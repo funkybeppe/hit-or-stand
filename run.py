@@ -23,106 +23,106 @@ def print_cards(cards, hidden):
     # Card shape will be randomly populated with card value and symbols
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t ________________"
+        card_shape = card_shape + " ________________ "
     if hidden:
-        card_shape += "\t ________________"
+        card_shape += " ________________ "
     print(card_shape)
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|                |"    
+        card_shape += "|                |"    
     print(card_shape)
  
     card_shape = ""
     for card in cards:
         if card.value == '10':
-            card_shape = card_shape + "\t|  {}            |".format(card.value)
+            card_shape = card_shape + "|  {}            |".format(card.value)
         else:
-            card_shape = card_shape + "\t|  {}             |".format(card.value)  
+            card_shape = card_shape + "|  {}             |".format(card.value)  
     if hidden:
-        card_shape += "\t|                |"    
+        card_shape += "|                |"    
     print(card_shape)
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|      * *       |"
+        card_shape += "|      * *       |"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|    *     *     |"
+        card_shape += "|    *     *     |"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|   *       *    |"
+        card_shape += "|   *       *    |"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|   *       *    |"
+        card_shape += "|   *       *    |"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|       {}        |".format(card.suit)
+        card_shape = card_shape + "|       {}        |".format(card.suit)
     if hidden:
-        card_shape += "\t|          *     |"
+        card_shape += "|          *     |"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|         *      |"
+        card_shape += "|         *      |"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|        *       |"
+        card_shape += "|        *       |"
     print(card_shape)
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|                |"
+        card_shape += "|                |"
     print(card_shape)
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|                |"
+        card_shape = card_shape + "|                |"
     if hidden:
-        card_shape += "\t|                |"
+        card_shape += "|                |"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
         if card.value == '10':
-            card_shape = card_shape + "\t|            {}  |".format(card.value)
+            card_shape = card_shape + "|            {}  |".format(card.value)
         else:
-            card_shape = card_shape + "\t|            {}   |".format(card.value)
+            card_shape = card_shape + "|            {}   |".format(card.value)
     if hidden:
-        card_shape += "\t|        *       |"        
+        card_shape += "|        *       |"        
     print(card_shape)    
          
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "\t|________________|"
+        card_shape = card_shape + "|________________|"
     if hidden:
-        card_shape += "\t|________________|"
+        card_shape += "|________________|"
     print(card_shape)        
  
     print()
