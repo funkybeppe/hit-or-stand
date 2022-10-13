@@ -266,3 +266,8 @@ The bartenders are efficient around here.
             if player_cards[0].card_value == 11 and player_cards[1].card_value == 11:
                 player_cards[0].card_value = 1
                 player_score -= 10
+
+        # Print player cards and score      
+        print("{}'S CARDS: ".format(player1.upper()))
+        print_cards(player_cards, False)
+        print("{}'S SCORE = ".format(player1.upper()), player_score)
