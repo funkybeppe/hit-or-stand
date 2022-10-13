@@ -281,3 +281,12 @@ The bartenders are efficient around here.
  
         # Updating the dealer score
         dealer_score += dealer_card.card_value
+
+        # Print dealer cards and score, keeping in mind to hide the second card and score
+        print("DEALER CARDS: ")
+        if len(dealer_cards) == 1:
+            print_cards(dealer_cards, False)
+            print("DEALER SCORE = ", dealer_score)
+        else:
+            print_cards(dealer_cards[:-1], True)    
+            print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
