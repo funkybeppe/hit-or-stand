@@ -157,6 +157,87 @@ def blackjack_game(deck):
 
     # User input validation for drink selection
     drink = pyip.inputYesNo(prompt="Would you like a drink? (Y/N) ")
-            
+    
+    # In case user selected Yes in the previous input
     if drink == "yes":
         drink_choice = pyip.inputNum(prompt="What kind of drink would you like? eg.(1,2,3)\n 1. Beer  2. Wine  3. Cocktail   ", min=1, lessThan=4)
+
+        # Beer drink choice
+        if drink_choice == 1:
+            print("""\033[93m
+         .   *   ..  . *  *
+       *  * @()Ooc()*   o  .
+           (Q@*0CG*O()  ___
+          |\_________/|/ _ \'
+          |  |  |  |  | / | |
+          |  |  |  |  | | | |
+          |  |  |  |  | | | |
+          |  |  |  |  | | | |
+          |  |  |  |  | | | |
+          |  |  |  |  | \_| |
+          |  |  |  |  |\___/  
+          |\_|__|__|_/|
+           \_________/
+There you are! Enjoy your beer!\n
+The bartenders are efficient around here.
+    \033[0m""")
+        
+        # Wine drink choice
+        if drink_choice == 2:
+            print("""\033[35m
+               __
+              [__]
+              |  |
+              |  |
+              |  |
+              |  |
+              |  |
+ ,----.      /`-. \'
+(      )    /-._|  \'
+|`----'|   |        |
+\      /   |`-...   |
+ `.  ,'    |'` . |  |
+   ||      |`,'- |  |
+ ,-||-.    |`-...|  |
+(  ''  )   |        | 
+ `----'     `-....-' 
+There you are! Enjoy your wine!\n
+The bartenders are efficient around here.
+    \033[0m""")
+
+        # Cocktail drink choice
+        if drink_choice == 3:
+            print('''\033[96m        
+         \ 
+   .\"""""""""-.
+   \`\-------'`/
+    \ \__ o . /
+     \/  \  o/
+      \__/. /
+       \_ _/
+         Y
+         |
+         |
+     _.-' '-._
+    `---------`
+There you are! Enjoy your cocktail!\n
+The bartenders are efficient around here.
+        \033[0m''')
+
+    print("-"*40)
+
+    # User input validation for rules selection
+    rules = pyip.inputYesNo(prompt="Do you know how to play? (Y/N) ")
+
+    # In case user selected No in the previous input
+    if rules == "no":
+        print("Okay! The rules are simple. You and the dealer will receive two cards in your hand. \n"
+              "Your goal is to beat the dealer by getting closer to 21.\nIf you and the dealer have the same number, it's a tie or push \n"
+              "Cards 2 - 10 counts as it's own number; jacks, queens, and kings counts as 10 each, and aces can count\n"
+              "as either 1 or 11. You can draw up to four cards at this table.")
+        print("-"*40)
+        print("Let's begin blackjack!")
+        print("-"*40)
+    else:
+        print("Let's begin blackjack!")
+        print("-"*40)
