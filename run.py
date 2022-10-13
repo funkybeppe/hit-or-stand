@@ -184,7 +184,7 @@ The bartenders are efficient around here.
         
         # Wine drink choice
         if drink_choice == 2:
-            print("""\033[35m
+            print("""\033[95m
                __
               [__]
               |  |
@@ -351,7 +351,7 @@ The bartenders are efficient around here.
                     player_score -= 10
                     ace_card += 1
                 else:
-                    ace_card += 1 
+                    ace_card += 1
 
             # Print player and dealer cards
             print("DEALER CARDS: ")
