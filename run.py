@@ -352,3 +352,14 @@ The bartenders are efficient around here.
                     ace_card += 1
                 else:
                     ace_card += 1 
+
+            # Print player and dealer cards
+            print("DEALER CARDS: ")
+            print_cards(dealer_cards[:-1], True)
+            print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
+ 
+            print()
+ 
+            print("{}'S CARDS: ".format(player1.upper()))
+            print_cards(player_cards, False)
+            print("{}'S SCORE = ".format(player1.upper()), player_score)
