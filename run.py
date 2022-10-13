@@ -331,3 +331,14 @@ The bartenders are efficient around here.
         # Sanity checks for player's choice
         if len(choice) != 1 or (choice.upper() != 'H' and choice.upper() != 'S'):
             print("Wrong choice!! Try Again")
+
+        # If player decides to HIT
+        if choice.upper() == 'H':
+ 
+            # Dealing a new card
+            player_card = random.choice(deck)
+            player_cards.append(player_card)
+            deck.remove(player_card)
+ 
+            # Updating player score
+            player_score += player_card.card_value
