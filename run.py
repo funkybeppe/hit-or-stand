@@ -312,3 +312,22 @@ The bartenders are efficient around here.
 
         elif anothergame == "yes":
             blackjack_game(deck)
+
+    # Print dealer and player cards
+    print("DEALER CARDS: ")
+    print_cards(dealer_cards[:-1], True)
+    print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
+
+    print() 
+ 
+    print("{}'S CARDS: ".format(player1.upper()))
+    print_cards(player_cards, False)
+    print("{}'S SCORE = ".format(player1.upper()), player_score)
+
+    # Managing the player moves
+    while player_score < 21:
+        choice = input("Enter H to Hit or S to Stand : ")
+ 
+        # Sanity checks for player's choice
+        if len(choice) != 1 or (choice.upper() != 'H' and choice.upper() != 'S'):
+            print("Wrong choice!! Try Again")
