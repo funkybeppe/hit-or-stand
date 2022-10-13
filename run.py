@@ -28,7 +28,6 @@ def print_cards(cards, hidden):
         card_shape += "\t ________________"
     print(card_shape)
  
- 
     card_shape = ""
     for card in cards:
         card_shape = card_shape + "\t|                |"
@@ -127,3 +126,8 @@ def print_cards(cards, hidden):
     print(card_shape)        
  
     print()
+
+# Function for a single game of blackjack
+def blackjack_game(deck):
+    
+    
