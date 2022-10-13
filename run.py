@@ -260,3 +260,9 @@ The bartenders are efficient around here.
 
         # Updating the player score
         player_score += player_card.card_value
+
+        # In case both the cards are Ace, make the first ace value as 1 
+        if len(player_cards) == 2:
+            if player_cards[0].card_value == 11 and player_cards[1].card_value == 11:
+                player_cards[0].card_value = 1
+                player_score -= 10
