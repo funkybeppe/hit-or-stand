@@ -141,7 +141,7 @@ def blackjack_game(deck):
 
 # Loop to check user input and avoid blank selections. Numbers are allowed as user can utilise them for a nickname.
     while True:
-        player1 = input("What is your name, superstar? ")
+        player1 = input("What is your name, superstar?\n ")
 
         if player1 == '':
             print("Username is empty, please select a name")
@@ -156,11 +156,11 @@ def blackjack_game(deck):
     print("-"*40)
 
     # User input validation for drink selection
-    drink = pyip.inputYesNo(prompt="Would you like a drink? (Y/N) ")
+    drink = pyip.inputYesNo(prompt="Would you like a drink? (Y/N)\n ")
     
     # In case user selected Yes in the previous input
     if drink == "yes":
-        drink_choice = pyip.inputNum(prompt="What kind of drink would you like? eg.(1,2,3)\n 1. Beer  2. Wine  3. Cocktail   ", min=1, lessThan=4)
+        drink_choice = pyip.inputNum(prompt="What kind of drink would you like? eg.(1,2,3)\n 1. Beer  2. Wine  3. Cocktail\n   ", min=1, lessThan=4)
 
         # Beer drink choice
         if drink_choice == 1:
@@ -227,7 +227,7 @@ The bartenders are efficient around here.
     print("-"*40)
 
     # User input validation for rules selection
-    rules = pyip.inputYesNo(prompt="Do you know how to play? (Y/N) ")
+    rules = pyip.inputYesNo(prompt="Do you know how to play? (Y/N)\n ")
 
     # In case user selected No in the previous input
     if rules == "no":
@@ -305,7 +305,7 @@ The bartenders are efficient around here.
         print("{} WINS!!!!".format(player1.upper()))
 
         # User input validation for another game question
-        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
@@ -326,7 +326,7 @@ The bartenders are efficient around here.
 
     # Managing the player moves
     while player_score < 21:
-        choice = input("Enter H to Hit or S to Stand : ")
+        choice = input("Enter H to Hit or S to Stand :\n ")
  
         # Sanity checks for player's choice
         if len(choice) != 1 or (choice.upper() != 'H' and choice.upper() != 'S'):
@@ -385,7 +385,7 @@ The bartenders are efficient around here.
         print("{} HAS A BLACKJACK".format(player1.upper()))
 
         # User input validation for another game question
-        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
@@ -399,7 +399,7 @@ The bartenders are efficient around here.
         print("-"*40)
 
         # User input validation for another game question
-        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
@@ -451,7 +451,7 @@ The bartenders are efficient around here.
         print("-"*40)
 
         # User input validation for another game question
-        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
@@ -464,7 +464,7 @@ The bartenders are efficient around here.
         print("DEALER HAS A BLACKJACK!!! {} LOSES".format(player1.upper()))
 
         # User input validation for another game question
-        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
@@ -477,7 +477,7 @@ The bartenders are efficient around here.
         print("TIE GAME!!!!")
 
         # User input validation for another game question
-        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
@@ -490,7 +490,7 @@ The bartenders are efficient around here.
         print("{} WINS!!!".format(player1.upper()))
 
         # User input validation for another game question
-        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
         if anothergame == "no":
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
@@ -501,7 +501,7 @@ The bartenders are efficient around here.
     # Dealer Wins
     else:
         print("DEALER WINS!!!")
-        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
 
         # User input validation for another game question
         if anothergame == "no":
@@ -535,3 +535,6 @@ if __name__ == '__main__':
  
             # Adding card to the deck
             deck.append(Card(suits_values[suit], card, cards_values[card]))
+
+    # Game function taking deck as unique parameter
+    blackjack_game(deck)
