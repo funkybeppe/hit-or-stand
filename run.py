@@ -363,3 +363,7 @@ The bartenders are efficient around here.
             print("{}'S CARDS: ".format(player1.upper()))
             print_cards(player_cards, False)
             print("{}'S SCORE = ".format(player1.upper()), player_score)
+
+    # If player decides to Stand
+        if choice.upper() == 'S':
+            break
