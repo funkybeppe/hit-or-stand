@@ -271,3 +271,13 @@ The bartenders are efficient around here.
         print("{}'S CARDS: ".format(player1.upper()))
         print_cards(player_cards, False)
         print("{}'S SCORE = ".format(player1.upper()), player_score)
+
+        input()
+
+        # Randomly dealing a card
+        dealer_card = random.choice(deck)
+        dealer_cards.append(dealer_card)
+        deck.remove(dealer_card)
+ 
+        # Updating the dealer score
+        dealer_score += dealer_card.card_value
