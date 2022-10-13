@@ -148,3 +148,15 @@ def blackjack_game(deck):
 
         elif player1 != '':
             break
+
+    # Welcome message
+    print("Welcome {}! Let's play! ".format(player1.upper()))
+    print("-"*40)
+    print("\033[92mWELCOME TO THE BLACKJACK TABLE\033[0m")
+    print("-"*40)
+
+    # User input validation for drink selection
+    drink = pyip.inputYesNo(prompt="Would you like a drink? (Y/N) ")
+            
+    if drink == "yes":
+        drink_choice = pyip.inputNum(prompt="What kind of drink would you like? eg.(1,2,3)\n 1. Beer  2. Wine  3. Cocktail   ", min=1, lessThan=4)
