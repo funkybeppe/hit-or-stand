@@ -290,3 +290,11 @@ The bartenders are efficient around here.
         else:
             print_cards(dealer_cards[:-1], True)    
             print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
+
+        # In case both the cards are Ace, make the second ace value as 1 
+        if len(dealer_cards) == 2:
+            if dealer_cards[0].card_value == 11 and dealer_cards[1].card_value == 11:
+                dealer_cards[1].card_value = 1
+                dealer_score -= 10
+ 
+        input()
