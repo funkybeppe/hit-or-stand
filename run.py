@@ -401,3 +401,15 @@ The bartenders are efficient around here.
             quit()
         elif anothergame == "yes":
             blackjack_game(deck)
+
+    input()
+
+    # Managing the dealer moves
+    while dealer_score < 17:
+ 
+        print("DEALER DECIDES TO HIT.....")
+ 
+        # Dealing card for dealer
+        dealer_card = random.choice(deck)
+        dealer_cards.append(dealer_card)
+        deck.remove(dealer_card)
