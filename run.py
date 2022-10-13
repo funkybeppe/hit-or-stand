@@ -471,3 +471,15 @@ The bartenders are efficient around here.
 
         elif anothergame == "yes":
             blackjack_game(deck)
+
+    # TIE Game
+    if dealer_score == player_score:
+        print("TIE GAME!!!!")
+
+        # User input validation for another game question
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        if anothergame == "no":
+            print("Thanks for playing! Come back for free drinks anytime!")
+            quit()
+        elif anothergame == "yes":
+            blackjack_game(deck)
