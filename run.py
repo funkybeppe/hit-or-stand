@@ -298,3 +298,17 @@ The bartenders are efficient around here.
                 dealer_score -= 10
  
         input()
+
+    # Player gets a blackjack   
+    if player_score == 21:
+        print("{} HAS A BLACKJACK!!!!".format(player1.upper()))
+        print("{} WINS!!!!".format(player1.upper()))
+
+        # User input validation for another game question
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        if anothergame == "no":
+            print("Thanks for playing! Come back for free drinks anytime!")
+            quit()
+
+        elif anothergame == "yes":
+            blackjack_game(deck)
