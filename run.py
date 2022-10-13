@@ -231,10 +231,10 @@ The bartenders are efficient around here.
 
     # In case user selected No in the previous input
     if rules == "no":
-        print("Okay! The rules are simple.\n You and the dealer will receive two cards in your hand.\n"
+        print("Okay! The rules are simple.\nYou and the dealer will receive two cards in your hand.\n"
               "Your goal is to beat the dealer by getting closer to 21.\nIf you and the dealer have the same number, it's a tie or push.\n"
-              "Cards 2 - 10 counts as it's own number; jacks, queens, and kings counts as 10 each.\n Aces can count"
-              "as either 1 or 11.\n You can draw up to four cards at this table.")
+              "Cards 2 - 10 counts as it's own number.\nJacks, queens, and kings counts as 10 each.\nAces can count"
+              "as either 1 or 11.\nYou can draw up to four cards at this table.")
         print("-"*40)
         print("Let's begin blackjack!")
         print("-"*40)
