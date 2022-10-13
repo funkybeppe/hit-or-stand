@@ -342,3 +342,13 @@ The bartenders are efficient around here.
  
             # Updating player score
             player_score += player_card.card_value
+
+            # Updating player score in case player's card have ace in them
+            ace_card = 0
+            while player_score > 21 and ace_card < len(player_cards):
+                if player_cards[ace_card].card_value == 11:
+                    player_cards[ace_card].card_value = 1
+                    player_score -= 10
+                    ace_card += 1
+                else:
+                    ace_card += 1 
