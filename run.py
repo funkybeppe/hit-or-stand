@@ -380,3 +380,13 @@ The bartenders are efficient around here.
     print_cards(dealer_cards, False)
     print("DEALER SCORE = ", dealer_score)
 
+    # Check if player has a Blackjack
+    if player_score == 21:
+        print("{} HAS A BLACKJACK".format(player1.upper()))
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        if anothergame == "no":
+            print("Thanks for playing! Come back for free drinks anytime!")
+            quit()
+
+        elif anothergame == "yes":
+            blackjack_game(deck)
