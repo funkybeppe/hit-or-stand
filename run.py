@@ -390,3 +390,14 @@ The bartenders are efficient around here.
 
         elif anothergame == "yes":
             blackjack_game(deck)
+    
+    # Check if player busts
+    if player_score > 21:
+        print("{} BUSTED!!! GAME OVER!!!".format(player1.upper()))
+        print("-"*40)
+        anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N) ")
+        if anothergame == "no":
+            print("Thanks for playing! Come back for free drinks anytime!")
+            quit()
+        elif anothergame == "yes":
+            blackjack_game(deck)
