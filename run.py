@@ -241,3 +241,11 @@ The bartenders are efficient around here.
     else:
         print("Let's begin blackjack!")
         print("-"*40)
+
+    # Cards for both dealer and player
+    player_cards = []
+    dealer_cards = []
+ 
+    # Scores for both dealer and player
+    player_score = 0
+    dealer_score = 0
