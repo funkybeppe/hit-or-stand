@@ -3,7 +3,7 @@ import random
 # To allow user input control
 import pyinputplus as pyip
 
-
+# The Card class definition
 class Card:
 
     def __init__(self, suit, value, card_value):
@@ -17,5 +17,113 @@ class Card:
         # Score Value for the Card like 10 for King
         self.card_value = card_value
 
+# Function to print the cards
 def print_cards(cards, hidden):
-    
+
+    # Card shape will be randomly populated with card value and symbols
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t ________________"
+    if hidden:
+        card_shape += "\t ________________"
+    print(card_shape)
+ 
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|                |"    
+    print(card_shape)
+ 
+    card_shape = ""
+    for card in cards:
+        if card.value == '10':
+            card_shape = card_shape + "\t|  {}            |".format(card.value)
+        else:
+            card_shape = card_shape + "\t|  {}             |".format(card.value)  
+    if hidden:
+        card_shape += "\t|                |"    
+    print(card_shape)
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|      * *       |"
+    print(card_shape)    
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|    *     *     |"
+    print(card_shape)    
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|   *       *    |"
+    print(card_shape)    
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|   *       *    |"
+    print(card_shape)    
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|       {}        |".format(card.suit)
+    if hidden:
+        card_shape += "\t|          *     |"
+    print(card_shape)    
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|         *      |"
+    print(card_shape)    
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|        *       |"
+    print(card_shape)
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|                |"
+    print(card_shape)
+ 
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|                |"
+    if hidden:
+        card_shape += "\t|                |"
+    print(card_shape)    
+ 
+    card_shape = ""
+    for card in cards:
+        if card.value == '10':
+            card_shape = card_shape + "\t|            {}  |".format(card.value)
+        else:
+            card_shape = card_shape + "\t|            {}   |".format(card.value)
+    if hidden:
+        card_shape += "\t|        *       |"        
+    print(card_shape)    
+         
+    card_shape = ""
+    for card in cards:
+        card_shape = card_shape + "\t|________________|"
+    if hidden:
+        card_shape += "\t|________________|"
+    print(card_shape)        
+ 
+    print()
