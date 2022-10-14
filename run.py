@@ -3,21 +3,21 @@ import random
 # To allow user input control
 import pyinputplus as pyip
 
-# The Card class definition
+# The definition for Card class
 class Card:
 
     def __init__(self, suit, value, card_value):
          
-        # Suit of the Card like Spades and Clubs
+        # Suit of the Card 
         self.suit = suit
  
-        # Representing Value of the Card like A for Ace, K for King
+        # Representing Value of the Card 
         self.value = value
  
-        # Score Value for the Card like 10 for King
+        # Score Value for the Card 
         self.card_value = card_value
 
-# Function to print the cards
+# Function that prints a sequence of lines populated by the card value and shape
 def print_cards(cards, hidden):
 
     # Card shape will be randomly populated with card value and symbols
@@ -127,8 +127,8 @@ def print_cards(cards, hidden):
  
     print()
 
-# Function for a single game of blackjack
-def blackjack_game(deck):
+# Main function for a single game
+def game(deck):
 
     # Game title with light green color code
     print("""\033[92m
@@ -151,9 +151,9 @@ def blackjack_game(deck):
 
     # Welcome message
     print("Welcome {}! Let's play! ".format(player1.upper()))
-    print("-"*40)
+    print("-"*50)
     print("\033[92mWELCOME TO THE BLACKJACK TABLE\033[0m")
-    print("-"*40)
+    print("-"*50)
 
     # User input validation for drink selection
     drink = pyip.inputYesNo(prompt="Would you like a drink? (Y/N)\n ")
@@ -224,7 +224,7 @@ There you are! Enjoy your cocktail!\n
 The bartenders are efficient around here.
         \033[0m''')
 
-    print("-"*40)
+    print("-"*50)
 
     # User input validation for rules selection
     rules = pyip.inputYesNo(prompt="Do you know how to play? (Y/N)\n ")
@@ -233,35 +233,35 @@ The bartenders are efficient around here.
     if rules == "no":
         print("Okay! The rules are simple.\nYou and the dealer will receive two cards in your hand.\n"
               "Your goal is to beat the dealer by getting closer to 21.\nIf you and the dealer have the same number, it's a tie or push.\n"
-              "Cards 2 - 10 counts as it's own number.\nJacks, queens, and kings counts as 10 each.\nAces can count"
+              "Cards 2 - 10 counts as it's own number.\nJacks, queens, and kings counts as 10 each.\nAces can count "
               "as either 1 or 11.\nYou can draw up to four cards at this table.")
-        print("-"*40)
-        print("Let's begin blackjack!")
-        print("-"*40)
+        print("-"*50)
+        print("Let's play blackjack!")
+        print("-"*50)
     else:
-        print("Let's begin blackjack!")
-        print("-"*40)
+        print("Let's play blackjack!")
+        print("-"*50)
 
-    # Cards for both dealer and player
+    # Dealer and player cards
     player_cards = []
     dealer_cards = []
  
-    # Scores for both dealer and player
+    # Dealer and player scores
     player_score = 0
     dealer_score = 0
 
-    # Initial hand for player and dealer
+    # First hand for dealer and player
     while len(player_cards) < 2:
 
-        # Randomly dealing a card
+        # Random card deal
         player_card = random.choice(deck)
         player_cards.append(player_card)
         deck.remove(player_card)
 
-        # Updating the player score
+        # Player score update
         player_score += player_card.card_value
 
-        # In case both the cards are Ace, make the first ace value as 1 
+        # If both cards are Ace, make the first ace value as 1
         if len(player_cards) == 2:
             if player_cards[0].card_value == 11 and player_cards[1].card_value == 11:
                 player_cards[0].card_value = 1
@@ -274,15 +274,15 @@ The bartenders are efficient around here.
 
         input()
 
-        # Randomly dealing a card
+        # Random card deal
         dealer_card = random.choice(deck)
         dealer_cards.append(dealer_card)
         deck.remove(dealer_card)
  
-        # Updating the dealer score
+        # Update dealer score
         dealer_score += dealer_card.card_value
 
-        # Print dealer cards and score, keeping in mind to hide the second card and score
+        # Print dealer cards and score, second card is hidden and score too
         print("DEALER CARDS: ")
         if len(dealer_cards) == 1:
             print_cards(dealer_cards, False)
@@ -291,7 +291,7 @@ The bartenders are efficient around here.
             print_cards(dealer_cards[:-1], True)    
             print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
 
-        # In case both the cards are Ace, make the second ace value as 1 
+        # If both cards are Ace, make the first ace value as 1
         if len(dealer_cards) == 2:
             if dealer_cards[0].card_value == 11 and dealer_cards[1].card_value == 11:
                 dealer_cards[1].card_value = 1
@@ -299,10 +299,10 @@ The bartenders are efficient around here.
  
         input()
 
-    # Player gets a blackjack   
+    # Player has blackjack 
     if player_score == 21:
-        print("{} HAS A BLACKJACK!!!!".format(player1.upper()))
-        print("{} WINS!!!!".format(player1.upper()))
+        print("{} HAS BLACKJACK!!".format(player1.upper()))
+        print("{} WINS!!".format(player1.upper()))
 
         # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
@@ -311,9 +311,9 @@ The bartenders are efficient around here.
             quit()
 
         elif anothergame == "yes":
-            blackjack_game(deck)
+            game(deck)
 
-    # Print dealer and player cards
+    # Print player and dealer cards
     print("DEALER CARDS: ")
     print_cards(dealer_cards[:-1], True)
     print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
@@ -324,26 +324,26 @@ The bartenders are efficient around here.
     print_cards(player_cards, False)
     print("{}'S SCORE = ".format(player1.upper()), player_score)
 
-    # Managing the player moves
+    # Player moves
     while player_score < 21:
-        choice = input("Enter H to Hit or S to Stand :\n ")
+        choice = input("Enter H to hit or S to stand :\n ")
  
-        # Sanity checks for player's choice
+        #  Player's choice
         if len(choice) != 1 or (choice.upper() != 'H' and choice.upper() != 'S'):
-            print("Wrong choice!! Try Again")
+            print("Wrong choice! Try Again")
 
-        # If player decides to HIT
+        # If player hits
         if choice.upper() == 'H':
  
-            # Dealing a new card
+            # Deal new card
             player_card = random.choice(deck)
             player_cards.append(player_card)
             deck.remove(player_card)
  
-            # Updating player score
+            # Update player score
             player_score += player_card.card_value
 
-            # Updating player score in case player's card have ace in them
+            # Update player score in case player has an ace in his cards
             ace_card = 0
             while player_score > 21 and ace_card < len(player_cards):
                 if player_cards[ace_card].card_value == 11:
@@ -353,7 +353,7 @@ The bartenders are efficient around here.
                 else:
                     ace_card += 1
 
-            # Print player and dealer cards
+            # Print dealer and player cards
             print("DEALER CARDS: ")
             print_cards(dealer_cards[:-1], True)
             print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
@@ -364,25 +364,25 @@ The bartenders are efficient around here.
             print_cards(player_cards, False)
             print("{}'S SCORE = ".format(player1.upper()), player_score)
 
-        # If player decides to Stand
+        # If player stands
         if choice.upper() == 'S':
             break
 
-    # Print player and dealer cards
+    # Print dealer and player cards
     print("{}'S CARDS: ".format(player1.upper()))
     print_cards(player_cards, False)
     print("{}'S SCORE = ".format(player1.upper()), player_score)
  
     print()
-    print("DEALER IS REVEALING THE CARDS....")
+    print("DEALER IS REVEALING THE CARDS...")
  
     print("DEALER CARDS: ")
     print_cards(dealer_cards, False)
     print("DEALER SCORE = ", dealer_score)
 
-    # Check if player has a Blackjack
+    # In case player has blackjack
     if player_score == 21:
-        print("{} HAS A BLACKJACK".format(player1.upper()))
+        print("{} HAS A BLACKJACK!".format(player1.upper()))
 
         # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
@@ -391,12 +391,12 @@ The bartenders are efficient around here.
             quit()
 
         elif anothergame == "yes":
-            blackjack_game(deck)
+            game(deck)
     
-    # Check if player busts
+    # Player busts
     if player_score > 21:
-        print("{} BUSTED!!! GAME OVER!!!".format(player1.upper()))
-        print("-"*40)
+        print("{} BUSTED! GAME OVER!!".format(player1.upper()))
+        print("-"*50)
 
         # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
@@ -405,24 +405,24 @@ The bartenders are efficient around here.
             quit()
 
         elif anothergame == "yes":
-            blackjack_game(deck)
+            game(deck)
 
     input()
 
-    # Managing the dealer moves
+    # Dealer moves
     while dealer_score < 17:
  
         print("DEALER DECIDES TO HIT.....")
  
-        # Dealing card for dealer
+        # Deal new card for dealer
         dealer_card = random.choice(deck)
         dealer_cards.append(dealer_card)
         deck.remove(dealer_card)
 
-        # Updating the dealer's score
+        # Update dealer's score
         dealer_score += dealer_card.card_value
  
-        # Updating player score in case player's card have ace in them
+        # Update player's score if has a ace in his cards
         ace_card = 0
         while dealer_score > 21 and ace_card < len(dealer_cards):
             if dealer_cards[ace_card].card_value == 11:
@@ -432,7 +432,7 @@ The bartenders are efficient around here.
             else:
                 ace_card += 1
 
-        # print player and dealer cards
+        # Print dealer and player cards
         print("{}'S CARDS: ".format(player1.upper()))
         print_cards(player_cards, False)
         print("{}'S SCORE = ".format(player1.upper()), player_score)
@@ -447,8 +447,8 @@ The bartenders are efficient around here.
 
     # Dealer busts
     if dealer_score > 21:        
-        print("DEALER BUSTED!!! YOU WIN!!!") 
-        print("-"*40)
+        print("DEALER BUSTED! YOU WIN!!") 
+        print("-"*50)
 
         # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
@@ -457,11 +457,11 @@ The bartenders are efficient around here.
             quit()
 
         elif anothergame == "yes":
-            blackjack_game(deck)
+            game(deck)
 
-    # Dealer gets a blackjack
+    # Dealer has blackjack
     if dealer_score == 21:
-        print("DEALER HAS A BLACKJACK!!! {} LOSES".format(player1.upper()))
+        print("DEALER HAS BLACKJACK! {} LOSES".format(player1.upper()))
 
         # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
@@ -470,11 +470,11 @@ The bartenders are efficient around here.
             quit()
 
         elif anothergame == "yes":
-            blackjack_game(deck)
+            game(deck)
 
-    # TIE Game
+    # When game ends in a push(tie)
     if dealer_score == player_score:
-        print("TIE GAME!!!!")
+        print("IT'S A TIE!!")
 
         # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
@@ -483,11 +483,11 @@ The bartenders are efficient around here.
             quit()
 
         elif anothergame == "yes":
-            blackjack_game(deck)
+            game(deck)
 
     # Player Wins
     elif player_score > dealer_score:
-        print("{} WINS!!!".format(player1.upper()))
+        print("{} WINS!!".format(player1.upper()))
 
         # User input validation for another game question
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
@@ -496,11 +496,11 @@ The bartenders are efficient around here.
             quit()
 
         elif anothergame == "yes":
-            blackjack_game(deck)
+            game(deck)
 
     # Dealer Wins
     else:
-        print("DEALER WINS!!!")
+        print("DEALER WINS!!")
         anothergame = pyip.inputYesNo(prompt="Want to try another round?(Y/N)\n ")
 
         # User input validation for another game question
@@ -508,33 +508,33 @@ The bartenders are efficient around here.
             print("Thanks for playing! Come back for free drinks anytime!")
             quit()
         elif anothergame == "yes":
-            blackjack_game(deck)     
+            game(deck)  
 
-if __name__ == '__main__':
+if __name__ == "__main__":   
  
-    # The type of suit
-    suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
+    # The suits kind list to populate the card shape
+    suits = ["Hearts", "Spades", "Clubs", "Diamonds"]
  
-    # The suit value 
-    suits_values = {"Spades":"\u2664", "Hearts":"\u2661", "Clubs": "\u2667", "Diamonds": "\u2662"}
+    # The suits value list to populate the card shape 
+    suits_values = {"Hearts":"\u2661","Spades":"\u2664", "Clubs": "\u2667", "Diamonds": "\u2662"}
  
-    # The type of card
+    # Card type list
     cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
  
-    # The card value
+    # Card value list
     cards_values = {"A": 11, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "10":10, "J":10, "Q":10, "K":10}
  
-    # The deck of cards
+    # The list of cards
     deck = []
  
-    # Loop for every type of suit
+    # For kind of suit
     for suit in suits:
  
-        # Loop for every type of card in a suit
+        # For  type of card in a suit
         for card in cards:
  
-            # Adding card to the deck
+            # Add card to the deck list
             deck.append(Card(suits_values[suit], card, cards_values[card]))
 
     # Game function taking deck as unique parameter
-    blackjack_game(deck)
+    game(deck)
