@@ -57,8 +57,6 @@ At this point the dealer will draw another card, the winning hand will be calcul
 ![Screenshot 2022-10-13 at 12 07 26](https://user-images.githubusercontent.com/105980082/195939133-089be4b1-716c-47e1-9970-21f7a41c7c31.png)
 ![Screenshot 2022-10-13 at 11 52 24](https://user-images.githubusercontent.com/105980082/195939148-1dcec45e-8e0e-4f56-85f6-75b3c89b4597.png)
 ![Screenshot 2022-10-13 at 11 53 18](https://user-images.githubusercontent.com/105980082/195939170-7a6a004e-1a33-49e5-a45d-abe48d88c25d.png)
-![Screenshot 2022-10-13 at 12 09 21](https://user-images.githubusercontent.com/105980082/195939320-a3c7ae44-9bf2-4382-bd7a-462d983d5003.png)
-
 
 ## Features
 
@@ -66,7 +64,8 @@ At this point the dealer will draw another card, the winning hand will be calcul
     * Cards are randomly created and displayed for both player and dealer
     * The player won't be able to see dealers second card as it will be concealed
   
-![Screenshot 2022-10-13 at 12 09 02](https://user-images.githubusercontent.com/105980082/195933461-f70a5e27-52d9-44bf-abeb-ca9bee257099.png)
+![Screenshot 2022-10-15 at 19 03 49](https://user-images.githubusercontent.com/105980082/196001875-e006c8b7-cf37-40b5-9877-11e88e6647fb.png)
+
 * Play against the computer
 * Accepts user inputs:
     * The username is requested to begin the game
@@ -75,11 +74,11 @@ At this point the dealer will draw another card, the winning hand will be calcul
     ![Screenshot 2022-10-13 at 11 49 01](https://user-images.githubusercontent.com/105980082/195934364-e1679624-754b-42e5-bb80-3dca47cf6a24.png)
     ![Screenshot 2022-10-13 at 11 50 31](https://user-images.githubusercontent.com/105980082/195934550-3777cce6-808c-4163-b1f1-d763a63ff6aa.png)
     ![Screenshot 2022-10-13 at 11 52 03](https://user-images.githubusercontent.com/105980082/195934717-5e232313-d95e-4f6c-9f74-948a8f503e77.png)
-    ![Screenshot 2022-10-13 at 12 08 04](https://user-images.githubusercontent.com/105980082/195934980-bddb3cd5-120c-4362-955c-74e93b5f818d.png)
+    ![Screenshot 2022-10-15 at 19 03 00](https://user-images.githubusercontent.com/105980082/196001956-c69051ee-662e-481a-8cfa-4cdca010ac35.png)
 * Calculates scores automatically
-  * ![Screenshot 2022-10-13 at 12 09 21](https://user-images.githubusercontent.com/105980082/195935751-32c83ef9-69e2-4d42-b25f-7e41f84a8291.png)
+  * ![Screenshot 2022-10-15 at 19 03 00](https://user-images.githubusercontent.com/105980082/196001901-83c3166c-28c7-4790-99b7-fe5d2e27e96c.png)
 * Announces the winner
-  * ![Screenshot 2022-10-14 at 21 22 00](https://user-images.githubusercontent.com/105980082/195936713-8a93cbe3-9d9f-4943-a51a-8228e73af217.png)
+  * ![Screenshot 2022-10-15 at 19 05 42](https://user-images.githubusercontent.com/105980082/196001908-512eb8dc-ee56-41b9-b726-7d89a21c4145.png)
 * Input validation and error-checking
     * User cannot input numbers on yes/no questions
     * User must enter yes or no to yes/no questions
@@ -161,7 +160,8 @@ I decided to assign integers to the drinks selections as it was easier to contro
 ## Validator Testing
 
 No errors were returned when passing through Python Linter
-Problems are present when the file is open on VScode, only regarding spaces and long code lines. I'm aware of these and I am satisfied these can be dismissed
+Problems are present when the file is open on VScode, only regarding spaces and long code lines. I'm aware of these and I am satisfied these can be dismissed.
+
 ![Screenshot 2022-10-13 at 11 21 55](https://user-images.githubusercontent.com/105980082/195998995-462d8478-55f8-4ca8-a58a-963a6c91de6c.png)
 
  
@@ -230,4 +230,14 @@ The content of this website was created by Luca Barbero.
 ## Code
 
 * Python: code snippet for card generation was taken from and modified[Stackoverflow](https://stackoverflow.com/questions/23704521/python-random-playing-card-generator-game)
-* Python: 
+* Python: code snippet for ascii card generation inspired by [Stackexchange](https://codereview.stackexchange.com/questions/82103/ascii-fication-of-playing-cards)
+* Game is inspired by this project from [AskPython](https://www.askpython.com/python/examples/blackjack-game-using-python)
+* PyInputPlus package: how to use this package was explained by the life saver book [Automate the boring stuff with Python](https://automatetheboringstuff.com/2e/chapter8/)
+* Terminal color codes were taken from [GeeksforGeeks](https://www.geeksforgeeks.org/print-colors-python-terminal/)
+* ASCII art logo was generated from [Security-Science](http://www.security-science.com/ascii-art)
+* The project is using a [CodeInstitute](https://github.com/Code-Institute-Org/python-essentials-template) template for the mockup terminal in browser
+
+## Acknowledgements
+
+* Thank you to my partner Jessica, for her relentless patience and support.
+* Thank you to my mentor, Ronan McLelland, for his encouragement and guidance.
