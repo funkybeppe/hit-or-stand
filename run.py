@@ -256,7 +256,7 @@ The bartenders are efficient around here.
         # Print player cards and score      
         print("         ==== {}'S CARDS ====         ".format(player1.upper()))
         print_cards(player_cards, False)
-        print("{}'S SCORE = ".format(player1.upper()), player_score)
+        print("{}'S SCORE ---->  ".format(player1.upper()), player_score)
 
         input()
 
@@ -272,10 +272,10 @@ The bartenders are efficient around here.
         print("         ==== DEALER CARDS ====         ")
         if len(dealer_cards) == 1:
             print_cards(dealer_cards, False)
-            print("DEALER SCORE = ", dealer_score)
+            print("DEALER SCORE ---->  ", dealer_score)
         else:
             print_cards(dealer_cards[:-1], True)    
-            print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
+            print("DEALER SCORE ---->  ", dealer_score - dealer_cards[-1].card_value)
 
         # If both cards are Ace, make the first ace value as 1
         if len(dealer_cards) == 2:
@@ -302,13 +302,13 @@ The bartenders are efficient around here.
     # Print player and dealer cards
     print("         ==== DEALER CARDS ====         ")
     print_cards(dealer_cards[:-1], True)
-    print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
+    print("DEALER SCORE ---->  ", dealer_score - dealer_cards[-1].card_value)
 
     print() 
  
     print("         ==== {}'S CARDS ====         ".format(player1.upper()))
     print_cards(player_cards, False)
-    print("{}'S SCORE = ".format(player1.upper()), player_score)
+    print("{}'S SCORE ---->  ".format(player1.upper()), player_score)
 
     # Player moves
     while player_score < 21:
@@ -342,13 +342,13 @@ The bartenders are efficient around here.
             # Print dealer and player cards
             print("         ==== DEALER CARDS ====         ")
             print_cards(dealer_cards[:-1], True)
-            print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
+            print("DEALER SCORE ---->  ", dealer_score - dealer_cards[-1].card_value)
  
             print()
  
             print("         ==== {}'S CARDS ====          ".format(player1.upper()))
             print_cards(player_cards, False)
-            print("{}'S SCORE = ".format(player1.upper()), player_score)
+            print("{}'S SCORE ---->  ".format(player1.upper()), player_score)
 
         # If player stands
         if choice.upper() == 'S':
@@ -357,14 +357,14 @@ The bartenders are efficient around here.
     # Print dealer and player cards
     print("         ==== {}'S CARDS ====         ".format(player1.upper()))
     print_cards(player_cards, False)
-    print("{}'S SCORE = ".format(player1.upper()), player_score)
+    print("{}'S SCORE ---->  ".format(player1.upper()), player_score)
  
     print()
     print("DEALER IS REVEALING THE CARDS...")
  
     print("         ==== DEALER CARDS ====          ")
     print_cards(dealer_cards, False)
-    print("DEALER SCORE = ", dealer_score)
+    print("DEALER SCORE ---->  ", dealer_score)
 
     # In case player has blackjack
     if player_score == 21:
@@ -398,7 +398,7 @@ The bartenders are efficient around here.
     # Dealer moves
     while dealer_score < 17:
  
-        print("DEALER DECIDES TO HIT.....")
+        print("DEALER DECIDES TO HIT...")
  
         # Deal new card for dealer
         dealer_card = random.choice(deck)
@@ -421,13 +421,13 @@ The bartenders are efficient around here.
         # Print dealer and player cards
         print("         ==== {}'S CARDS ====          ".format(player1.upper()))
         print_cards(player_cards, False)
-        print("{}'S SCORE = ".format(player1.upper()), player_score)
+        print("{}'S SCORE ---->  ".format(player1.upper()), player_score)
  
         print()
  
         print("         ==== DEALER CARDS ====          ")
         print_cards(dealer_cards, False)
-        print("DEALER SCORE = ", dealer_score)      
+        print("DEALER SCORE ---->  ", dealer_score)      
  
         input()
 
