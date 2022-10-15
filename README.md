@@ -98,7 +98,7 @@ At this point the dealer will draw another card, the winning hand will be calcul
 
 * Languages
     * [Python](https://www.python.org/)
-      * Python language is used for the game ran in terminal
+      * Python language is used for the game ran in terminalqew3
     * JavaScript
       * Used to run the mock terminal
     * HTML
@@ -110,7 +110,7 @@ At this point the dealer will draw another card, the winning hand will be calcul
       * package used to prevent wrong user input
       
 * Other tools
-    * [Heroku](https://heroku.com/)
+   * [Heroku](https://heroku.com/)
       * The game is hosted in Heroku
     * [Lucidchart](https://lucid.app/)
       * The flowcharts for the game logic were designed in Lucidchart
