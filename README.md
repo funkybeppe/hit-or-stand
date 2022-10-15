@@ -152,19 +152,36 @@ The live Project can be found [here](https://hit-or-stand.herokuapp.com/)
 
 ## Bugs
 
+In the first deployment, I figured out the cards were too big to fit 4 in a row in the mockup terminal.
+![Screenshot 2022-10-13 at 12 26 16](https://user-images.githubusercontent.com/105980082/195998686-7cc93573-a8cc-4e8f-8265-577337484897.png)
+
+I decided to assign integers to the drinks selections as it was easier to control with PyinputPlus, as by assigning strings the code was not processed in a correct way.
 
 
 ## Validator Testing
+
+No errors were returned when passing through Python Linter
+Problems are present when the file is open on VScode, only regarding spaces and long code lines. I'm aware of these and I am satisfied these can be dismissed
+![Screenshot 2022-10-13 at 11 21 55](https://user-images.githubusercontent.com/105980082/195998995-462d8478-55f8-4ca8-a58a-963a6c91de6c.png)
+
+ 
+* Accessibility
+
+  * I confirmed that the colors used in the terminal are easy to read and accessible by running it through lighthouse in devtools.
+  ![Screenshot 2022-10-14 at 22 10 15](https://user-images.githubusercontent.com/105980082/195998979-16c69868-5613-4068-a07d-8fd8acdc2447.png)
 
 
 
 ## Unfixed bugs
 
+No unfixed bugs
 
 # Deployment
 
-The application was deployed to Heroku and can be accessed from the following link: Pathfinding algorithm visualizer
+The application was deployed to Heroku and can be accessed from the following link: https://hit-or-stand.herokuapp.com/
+
 The steps to deploy the application to Heroku are:
+
 1. Create a Heroku account if you don't have one.
 2. In the dashboard, go to the "Apps" tab.
 3. Click on the "New" button and choose "Create a new app".
@@ -183,7 +200,9 @@ The steps to deploy the application to Heroku are:
 12. Then, you need to choose the repository you want to deploy.
 13. Go down to the "Manual deploy" section, choose the branch you want to deploy, and click on the "Deploy branch" button.
 14. The application will be deployed to Heroku. You can access it by clicking on the "View" button.
+
 The steps to run the application locally on your machine are:
+
 1. The application requires you to have Python 3 installed on your machine.
     * If you are using Windows, you can download Python 3 from Python website.
     * If you are using Linux, the Python 3 installation is probably already included in your distribution, but if not, you can install it by running the following command in your terminal:
@@ -195,10 +214,20 @@ The steps to run the application locally on your machine are:
 2. Now, you need to download the application source code from GitHub.
     * Go to the GitHub repository, click on the "Download ZIP" button, and extract the zip file's contents to the folder where you want to place the application.
     * Or use the following command to download the application source code:
-        * git clone https://github.com/
+        * git clone https://github.com/funkybeppe/hit-or-stand
 3. Now, you need to install the dependencies.
     * Navigate to the folder where you placed the application source code and run the following command:
         * pip3 install -r requirements.txt
 4. Now, you can run the application on your machine by running the following command:
     * python3 run.py
 
+# Credits
+
+## Content
+
+The content of this website was created by Luca Barbero.
+
+## Code
+
+* Python: code snippet for card generation was taken from and modified[Stackoverflow](https://stackoverflow.com/questions/23704521/python-random-playing-card-generator-game)
+* Python: 
