@@ -23,106 +23,92 @@ def print_cards(cards, hidden):
     # Card shape will be randomly populated with card value and symbols
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + " ________________ "
+        card_shape = card_shape + " _____________ "
     if hidden:
-        card_shape += " ________________ "
+        card_shape += " _____________ "
     print(card_shape)
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|                |"
+        card_shape = card_shape + "|             |"
     if hidden:
-        card_shape += "|                |"    
+        card_shape += "|             |"    
     print(card_shape)
  
     card_shape = ""
     for card in cards:
         if card.value == '10':
-            card_shape = card_shape + "|  {}            |".format(card.value)
+            card_shape = card_shape + "| {}          |".format(card.value)
         else:
-            card_shape = card_shape + "|  {}             |".format(card.value)  
+            card_shape = card_shape + "| {}           |".format(card.value)  
     if hidden:
-        card_shape += "|                |"    
+        card_shape += "|░░░░░░░░░░░░░|"    
     print(card_shape)
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|                |"
+        card_shape = card_shape + "|             |"
     if hidden:
-        card_shape += "|      * *       |"
+        card_shape += "|░░░░░░░░░░░░░|"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|                |"
+        card_shape = card_shape + "|             |"
     if hidden:
-        card_shape += "|    *     *     |"
+        card_shape += "|░░░░░░░░░░░░░|"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|                |"
+        card_shape = card_shape + "|             |"
     if hidden:
-        card_shape += "|   *       *    |"
+        card_shape += "|░░░░░░░░░░░░░|"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|                |"
+        card_shape = card_shape + "|      {}      |".format(card.suit)
     if hidden:
-        card_shape += "|   *       *    |"
+        card_shape += "|░░░░░░░░░░░░░|"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|       {}        |".format(card.suit)
+        card_shape = card_shape + "|             |"
     if hidden:
-        card_shape += "|          *     |"
+        card_shape += "|░░░░░░░░░░░░░|"
     print(card_shape)    
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|                |"
+        card_shape = card_shape + "|             |"
     if hidden:
-        card_shape += "|         *      |"
-    print(card_shape)    
- 
-    card_shape = ""
-    for card in cards:
-        card_shape = card_shape + "|                |"
-    if hidden:
-        card_shape += "|        *       |"
+        card_shape += "|░░░░░░░░░░░░░|"
     print(card_shape)
  
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|                |"
+        card_shape = card_shape + "|             |"
     if hidden:
-        card_shape += "|                |"
+        card_shape += "|░░░░░░░░░░░░░|"
     print(card_shape)
- 
-    card_shape = ""
-    for card in cards:
-        card_shape = card_shape + "|                |"
-    if hidden:
-        card_shape += "|                |"
-    print(card_shape)    
- 
+
     card_shape = ""
     for card in cards:
         if card.value == '10':
-            card_shape = card_shape + "|            {}  |".format(card.value)
+            card_shape = card_shape + "|          {} |".format(card.value)
         else:
-            card_shape = card_shape + "|            {}   |".format(card.value)
+            card_shape = card_shape + "|           {} |".format(card.value)
     if hidden:
-        card_shape += "|        *       |"        
+        card_shape += "|░░░░░░░░░░░░░|"        
     print(card_shape)    
          
     card_shape = ""
     for card in cards:
-        card_shape = card_shape + "|________________|"
+        card_shape = card_shape + "|_____________|"
     if hidden:
-        card_shape += "|________________|"
+        card_shape += "|_____________|"
     print(card_shape)        
  
     print()
@@ -268,7 +254,7 @@ The bartenders are efficient around here.
                 player_score -= 10
 
         # Print player cards and score      
-        print("{}'S CARDS: ".format(player1.upper()))
+        print("         ==== {}'S CARDS ====         ".format(player1.upper()))
         print_cards(player_cards, False)
         print("{}'S SCORE = ".format(player1.upper()), player_score)
 
@@ -283,7 +269,7 @@ The bartenders are efficient around here.
         dealer_score += dealer_card.card_value
 
         # Print dealer cards and score, second card is hidden and score too
-        print("DEALER CARDS: ")
+        print("         ==== DEALER CARDS ====         ")
         if len(dealer_cards) == 1:
             print_cards(dealer_cards, False)
             print("DEALER SCORE = ", dealer_score)
@@ -314,13 +300,13 @@ The bartenders are efficient around here.
             game(deck)
 
     # Print player and dealer cards
-    print("DEALER CARDS: ")
+    print("         ==== DEALER CARDS ====         ")
     print_cards(dealer_cards[:-1], True)
     print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
 
     print() 
  
-    print("{}'S CARDS: ".format(player1.upper()))
+    print("         ==== {}'S CARDS ====         ".format(player1.upper()))
     print_cards(player_cards, False)
     print("{}'S SCORE = ".format(player1.upper()), player_score)
 
@@ -354,13 +340,13 @@ The bartenders are efficient around here.
                     ace_card += 1
 
             # Print dealer and player cards
-            print("DEALER CARDS: ")
+            print("         ==== DEALER CARDS ====         ")
             print_cards(dealer_cards[:-1], True)
             print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
  
             print()
  
-            print("{}'S CARDS: ".format(player1.upper()))
+            print("         ==== {}'S CARDS ====          ".format(player1.upper()))
             print_cards(player_cards, False)
             print("{}'S SCORE = ".format(player1.upper()), player_score)
 
@@ -369,14 +355,14 @@ The bartenders are efficient around here.
             break
 
     # Print dealer and player cards
-    print("{}'S CARDS: ".format(player1.upper()))
+    print("         ==== {}'S CARDS ====         ".format(player1.upper()))
     print_cards(player_cards, False)
     print("{}'S SCORE = ".format(player1.upper()), player_score)
  
     print()
     print("DEALER IS REVEALING THE CARDS...")
  
-    print("DEALER CARDS: ")
+    print("         ==== DEALER CARDS ====          ")
     print_cards(dealer_cards, False)
     print("DEALER SCORE = ", dealer_score)
 
@@ -433,13 +419,13 @@ The bartenders are efficient around here.
                 ace_card += 1
 
         # Print dealer and player cards
-        print("{}'S CARDS: ".format(player1.upper()))
+        print("         ==== {}'S CARDS ====          ".format(player1.upper()))
         print_cards(player_cards, False)
         print("{}'S SCORE = ".format(player1.upper()), player_score)
  
         print()
  
-        print("DEALER CARDS: ")
+        print("         ==== DEALER CARDS ====          ")
         print_cards(dealer_cards, False)
         print("DEALER SCORE = ", dealer_score)      
  
@@ -516,7 +502,7 @@ if __name__ == "__main__":
     suits = ["Hearts", "Spades", "Clubs", "Diamonds"]
  
     # The suits value list to populate the card shape 
-    suits_values = {"Hearts":"\u2661","Spades":"\u2664", "Clubs": "\u2667", "Diamonds": "\u2662"}
+    suits_values = {"Hearts":"♥","Spades":"♠", "Clubs": "♣", "Diamonds": "♦"}
  
     # Card type list
     cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
