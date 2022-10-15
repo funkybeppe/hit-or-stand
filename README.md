@@ -148,6 +148,8 @@ The live Project can be found [here](https://hit-or-stand.herokuapp.com/)
 
 ### Tests Results
 
+![Screenshot 2022-10-15 at 20 23 28](https://user-images.githubusercontent.com/105980082/196004462-3654d8a4-780c-4842-9132-b20dab70b6a3.png)
+
 
 ## Bugs
 
