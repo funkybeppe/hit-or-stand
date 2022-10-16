@@ -169,6 +169,7 @@ Problems are present when the file is open on VScode, only regarding spaces and 
 * Accessibility
 
   * I confirmed that the colors used in the terminal are easy to read and accessible by running it through lighthouse in devtools.
+  
   ![Screenshot 2022-10-14 at 22 10 15](https://user-images.githubusercontent.com/105980082/195998979-16c69868-5613-4068-a07d-8fd8acdc2447.png)
 
 
